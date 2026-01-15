@@ -40,7 +40,7 @@ for n = 1:N
     % Wektor pochodnych w punkcie przesuniętym o alpha*h
     k1 = right(x(n)+alpha*h, y(:,n)+alpha*h*k0, b, a);
     % Wektor pochodnych w punkcie przesuniętym o beta*h
-    k2 = right(x(n)+beta*h, y(:,n) + h*((1-beta)*k0 + beta*k1), b, a);
+    k2 = right(x(n)+beta*h, y(:,n) + h*beta*k1, b, a);
     % Zapisujemy nowy wektor stanu w następnej kolumnie macierzy y
     y(:,n+1) = y(:,n) + (h/4) * (k0 + 3*k2);
 end
